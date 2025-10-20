@@ -1,0 +1,343 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+  @font-face {
+    font-family: 'Cocogoose Pro';
+    src: url('./fonts/cocogoose/Cocogoose-Pro-Light-trial.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+:root {
+    /* Colores principales */
+    --color-bg: #0A0A0A;          /* fondo negro profundo */
+    --color-primary: #00FFF5;     /* cian neón */
+    --color-secondary: #FF00FF;   /* magenta eléctrico */
+    --color-accent: #FFD700;      /* dorado brillante */
+    --color-accent-hover: #e0bf01;      /* dorado brillante */
+    
+    /* Colores neutros */
+    --color-white: #FFFFFF;
+    --color-gray-light: #CCCCCC;
+    --color-gray-dark: #1E1E1E;
+  
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --gradient-accent: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  
+    /* Tipografía */
+    --font-main: "Inter", "Roboto", sans-serif;
+    --font-accent: "Orbitron", "Space Mono", monospace;
+  
+    /* Espaciados */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+  
+    /* Bordes */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body{
+    background-color: var(--color-bg);
+    color: var(--color-gray-light);
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+}
+
+h1, h2{
+    font-family: 'Cocogoose Pro';
+    font-size: 100px;
+  }
+
+.center{
+    margin: 0 auto;
+    width: 95%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-bg);
+}
+
+.btn{
+    background-color: var(--color-accent);
+    padding: 0.5rem 1.25rem;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--color-accent-hover);
+}
+
+/* HERO///////////////////////////////////////////////////// */
+
+#hero{
+    background-color: var(--color-gray-dark);
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-image: url('./img/hero02.png'); 
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+#hero .elements{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1rem 0;
+}
+
+#hero .elements div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hero .elements div img{
+    height: 32px;
+}
+
+#hero .elements div p{
+    font-size: 24px;
+}
+
+#hero h1{
+    font-size: 10rem;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1rem;
+}
+
+/* ABOUT///////////////////////////////////////////////////// */
+
+#about{
+    padding: 3rem 0;
+}
+
+#about div{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#about p{
+    font-size: 24px;
+    width: 40%;
+}
+
+
+#about2{
+    padding: 3rem 0;
+}
+
+#about2 div{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#about2 p{
+    font-size: 24px;
+    width: 40%;
+}
+
+/* VIDEO///////////////////////////////////////////////////// */
+
+#video{
+    background-color: var(--color-gray-dark);
+    height: 60vh;
+}
+
+#video {
+    position: relative;
+    width: 100%;
+    height: 6ovh; /* o 80vh si querés que no ocupe toda la pantalla */
+    overflow: hidden;
+  }
+  
+  #video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 👈 clave para el efecto "background cover" */
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    filter: brightness(0.75); /* opcional, para oscurecer un poco el video */
+  }
+  
+
+/* GALLERY///////////////////////////////////////////////////// */
+#gallery .line{
+    display: flex;
+    height: 40vh;
+}
+
+.line .img1{ 
+    background-image:url("./img/detail01.png"); 
+    flex: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.line .img2{ 
+    background-image:url("./img/image\ 16.png"); 
+    flex: 1;
+    background-size: cover;
+}
+
+.line .img3{ 
+    background-image:url("./img/detail03.png"); 
+    flex: 1;
+    background-size: cover;
+}
+
+.line .block{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BANNER///////////////////////////////////////////////////// */
+
+#banner {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), /* capa negra sutil */
+    url('./img/Mira.jpg');
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding: 2rem 0;
+  }
+
+.center2{
+    margin: 0 auto;
+    width: 30%;
+}
+
+.center2 h3{
+    font-size: 8rem;
+}
+
+.center2 h3:nth-of-type(2){
+    text-align: end;
+}
+
+.center2 div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.center2 div:nth-of-type(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* FOOTER///////////////////////////////////////////////////// */
+
+footer div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    align-items: center;
+}
+
+footer p{
+    font-family: 'Cocogoose Pro';
+    font-size: 1.25rem;
+}
+
+footer img{
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+
+
+/* PHONE */
+@media screen and (max-width: 600px) {
+    /* estilos para mobile */
+    #hero{
+        background-size: cover;   
+        background-color: black;  
+    }
+
+    #hero h1{
+        font-size: 2.5rem;
+        letter-spacing: 0.5rem;
+        margin-bottom: 6rem;
+    }
+
+    h1, h2{
+        font-family: 'Cocogoose Pro';
+        font-size: 45px;
+      }
+
+      #about p{
+        font-size: 16px;
+      }  
+
+      #about div{
+        gap: 1rem;
+      }
+
+    #about2 div{
+        flex-direction: column;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    #about2 div p{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .center2{
+        margin: 0 auto;
+        width: 90%;
+    }
+
+  }
+  
+/* TABLET */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    #hero h1{
+        font-size: 6rem;
+        letter-spacing: 1rem;
+        margin-bottom: 12rem;
+    }
+
+    h1, h2{
+        font-family: 'Cocogoose Pro';
+        font-size: 45px;
+      }
+
+  }
+  
+
+
