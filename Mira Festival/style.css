@@ -16,27 +16,27 @@
     --color-secondary: #FF00FF;   /* magenta eléctrico */
     --color-accent: #FFD700;      /* dorado brillante */
     --color-accent-hover: #e0bf01;      /* dorado brillante */
-    
+
     /* Colores neutros */
     --color-white: #FFFFFF;
     --color-gray-light: #CCCCCC;
     --color-gray-dark: #1E1E1E;
-  
+
     /* Gradientes */
     --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     --gradient-accent: linear-gradient(90deg, var(--color-accent), var(--color-primary));
-  
+
     /* Tipografía */
     --font-main: "Inter", "Roboto", sans-serif;
     --font-accent: "Orbitron", "Space Mono", monospace;
-  
+
     /* Espaciados */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --spacing-xl: 64px;
-  
+
     /* Bordes */
     --radius-sm: 6px;
     --radius-md: 12px;
@@ -47,7 +47,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+}
 
 body{
     background-color: var(--color-bg);
@@ -91,10 +91,10 @@ a{
     flex-direction: column;
     justify-content: space-between;
 
-    background-image: url('./img/hero02.png'); 
-    background-size: cover;    
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-image: url('./img/hero02.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #hero .elements{
@@ -174,7 +174,7 @@ a{
     height: 6ovh; /* o 80vh si querés que no ocupe toda la pantalla */
     overflow: hidden;
   }
-  
+
   #video video {
     position: absolute;
     top: 50%;
@@ -186,7 +186,7 @@ a{
     z-index: 0;
     filter: brightness(0.75); /* opcional, para oscurecer un poco el video */
   }
-  
+
 
 /* GALLERY///////////////////////////////////////////////////// */
 #gallery .line{
@@ -194,22 +194,22 @@ a{
     height: 40vh;
 }
 
-.line .img1{ 
-    background-image:url("./img/detail01.png"); 
+.line .img1{
+    background-image:url("./img/detail01.png");
     flex: 1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
 }
 
-.line .img2{ 
-    background-image:url("./img/image\ 16.png"); 
+.line .img2{
+    background-image:url("./img/image\ 16.png");
     flex: 1;
     background-size: cover;
 }
 
-.line .img3{ 
-    background-image:url("./img/detail03.png"); 
+.line .img3{
+    background-image:url("./img/detail03.png");
     flex: 1;
     background-size: cover;
 }
@@ -224,12 +224,12 @@ a{
 /* BANNER///////////////////////////////////////////////////// */
 
 #banner {
-    background-image: 
+    background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), /* capa negra sutil */
     url('./img/Mira.jpg');
-    background-size: cover;      
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 2rem 0;
   }
 
@@ -278,46 +278,42 @@ footer img{
 }
 
 /* SLIDER///////////////////////////////////////////////////// */
-.slider {
-  overflow: hidden;
-  position: relative;
+.slider{
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   width: 100%;
   margin: 5rem 0;
 }
 
-.slide-track {
+.slide-track{
   display: flex;
-  width: calc(250px * 22); /* 11 originales x2 duplicados */
-  animation: scroll 40s linear infinite;
+  gap: 1rem;
+}
+.item{
+  flex: 0 0 250px;
 }
 
-.item {
-  flex: 0 0 auto;
-  width: 250px;
-  margin-right: 1rem;
+.item-link {
+  color: var(--color-gray-light);
+  transition: color 250ms ease;
 }
 
-.item img {
+.item-link:hover {
+  color: var(--color-white);
+}
+
+.item img{
   width: 100%;
   height: 330px;
+  object-fit: cover;
   opacity: 0.7;
 }
+.slider::-webkit-scrollbar{ height: 0; }
+.slider{ scrollbar-width: none; }
 
-.item p:first-of-type{
-    margin-top: 0.5rem;
-}
-
-.item p:last-of-type{
-  font-size: 0.8rem;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 11)); /* se mueve la mitad (los originales) */
-  }
+@media (prefers-reduced-motion: reduce){
+  .slider{ scroll-behavior: auto; }
 }
 
 
@@ -325,8 +321,8 @@ footer img{
 @media screen and (max-width: 600px) {
     /* estilos para mobile */
     #hero{
-        background-size: cover;   
-        background-color: black;  
+        background-size: cover;
+        background-color: black;
     }
 
     #hero h1{
@@ -342,7 +338,7 @@ footer img{
 
       #about p{
         font-size: 16px;
-      }  
+      }
 
       #about div{
         gap: 1rem;
@@ -363,9 +359,8 @@ footer img{
         margin: 0 auto;
         width: 90%;
     }
-
   }
-  
+
 /* TABLET */
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     #hero h1{
@@ -380,6 +375,6 @@ footer img{
       }
 
   }
-  
+
 
 
